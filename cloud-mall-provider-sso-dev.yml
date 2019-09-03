@@ -8,9 +8,9 @@ spring:
     joda-date-time-format: yyyy-MM-dd HH:mm:ss
     date-format: yyyy-MM-dd HH:mm:ss
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/expand_platform?characterEncoding=utf8&useSSL=false&serverTimezone=UTC
+    url: jdbc:mysql://106.14.3.186:3306/expand_platform?characterEncoding=utf8&useSSL=false&serverTimezone=UTC
     username: root
-    password:
+    password: ypwl2016.z
   redis:
     port: 6379
     host: localhost
