@@ -1,0 +1,45 @@
+server:
+  port: 7979
+
+spring:
+  http:
+    encoding:
+      charset: UTF-8
+      force: true
+      enabled: true
+    multipart:
+      enabled: true
+      max-request-size: 50MB
+      max-file-size: 50MB
+
+zuul:
+  host:
+    socket-timeout-millis: 60000
+    connect-timeout-millis: 60000
+  forceOriginalQueryStringEncoding: true
+  routes:
+    user-route:
+      path: /user/**
+      sensitiveHeaders: 
+      service-id: shopmall-cloud-provider-user
+      ribbon:
+        eager-load:
+          enabled: true
+        MaxAutoRetries: 1
+        MaxAutoRetriesNextServer: 2
+        OkToRetryOnAllOperations: false
+        ConnectTimeout: 10000
+        ReadTimeout: 10000
+
+security:
+  oauth2:
+    client:
+      clientId: shopmall-client-zuulgateway
+      clientSecret: shopmallClientSecret
+      access-token-uri: http://127.0.0.1:7979/user/oauth/token
+      user-authorization-uri: http://127.0.0.1:7979/user/oauth/authorize
+    resource:
+      user-info-uri: http://127.0.0.1:7979/user/user
+      prefer-token-info: false
+#      jwt:
+#        key-uri: http://127.0.0.1:8000/oauth/token_key

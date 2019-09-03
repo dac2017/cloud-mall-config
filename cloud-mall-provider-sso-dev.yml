@@ -1,0 +1,63 @@
+server:
+  port: 8000
+
+ 
+
+spring:
+  application:
+    name: @pom.artifactId@
+  mvc:
+    date-format: yyyy-MM-dd HH:mm:ss
+  jackson:
+    joda-date-time-format: yyyy-MM-dd HH:mm:ss
+    date-format: yyyy-MM-dd HH:mm:ss
+  datasource:
+    url: jdbc:mysql://106.14.3.186:3306/expand_platform?characterEncoding=utf8&useSSL=false&serverTimezone=UTC
+    username: root
+    password: ypwl2016.z
+  redis:
+    port: 6379
+    host: localhost
+    password: yipeng2018
+
+
+
+mybatis:
+  mapper-locations: classpath:mybatis/mapping/*.xml
+  type-aliases-package: com.com.cloudmall.common.base.mybatis.domain
+  configuration:
+    map-underscore-to-camel-case: true
+
+
+security:
+  oauth2:
+    client:
+      clientId: shopmall-client-user
+      clientSecret: shopmallClientSecret
+      access-token-uri: http://127.0.0.1:8000/oauth/token
+      user-authorization-uri: http://127.0.0.1:8000/oauth/authorize
+    resource:
+      id: shopmall-resource-user
+
+
+shopmall:
+  enableSqlLogInterceptor: false
+  token:
+    interceptor:
+      enable: true
+  oauth2:
+    jwtSigningKey: shopmall
+    client:
+      id: ${security.oauth2.resource.id}
+      accessTokenUrl: ${security.oauth2.client.access-token-uri}
+      clientId: ${security.oauth2.client.clientId}
+      clientSecret: ${security.oauth2.client.clientSecret}
+      clientAuthenticationScheme: header
+  security:
+    oauth2:
+      tokenStore: jwt
+      clients[0]:
+        clientId: shopmall-client-user
+        clientSecret: shopmallClientSecret
+        accessTokenValidateSeconds: 7200
+        scope: "*"
