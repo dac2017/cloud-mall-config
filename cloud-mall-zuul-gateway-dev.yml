@@ -13,6 +13,7 @@ spring:
       max-file-size: 50MB
 
 zuul:
+  sensitive-headers: Cookie,Set-Cookie,Authorization
   host:
     socket-timeout-millis: 60000
     connect-timeout-millis: 60000
