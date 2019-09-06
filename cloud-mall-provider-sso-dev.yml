@@ -55,5 +55,6 @@ shopmall:
       clients[0]:
         clientId: shopmall-client-user
         clientSecret: shopmallClientSecret
-        accessTokenValidateSeconds: 60
+        accessTokenValidateSeconds: 600
         scope: "*"
+
