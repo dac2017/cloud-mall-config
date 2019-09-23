@@ -21,7 +21,7 @@ zuul:
   routes:
     auth-route:
       path: /auth/**
-      sensitiveHeaders: 
+      sensitiveHeaders:
       service-id: cloud-mall-provider-sso
       ribbon:
         eager-load:
@@ -31,4 +31,17 @@ zuul:
         OkToRetryOnAllOperations: false
         ConnectTimeout: 10000
         ReadTimeout: 10000
+    order-route:
+      path: /order/**
+      sensitiveHeaders:
+      service-id: cloud-mall-provider-order
+      ribbon:
+        eager-load:
+          enabled: true
+        MaxAutoRetries: 1
+        MaxAutoRetriesNextServer: 2
+        OkToRetryOnAllOperations: false
+        ConnectTimeout: 10000
+        ReadTimeout: 10000   
+        
 
