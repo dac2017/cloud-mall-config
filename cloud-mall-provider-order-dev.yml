@@ -33,5 +33,5 @@ security:
       access-token-uri: http://127.0.0.1:7979/auth/oauth/token
       user-authorization-uri: http://127.0.0.1:7979/auth/oauth/authorize
     resource:
-      user-info-uri: http://127.0.0.1:7979/user/user 
+      user-info-uri: http://127.0.0.1:7979/auth/user 
       prefer-token-info: false 
