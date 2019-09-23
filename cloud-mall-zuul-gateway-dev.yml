@@ -19,8 +19,8 @@ zuul:
     connect-timeout-millis: 60000
   forceOriginalQueryStringEncoding: true
   routes:
-    user-route:
-      path: /user/**
+    auth-route:
+      path: /auth/**
       sensitiveHeaders: 
       service-id: cloud-mall-provider-sso
       ribbon:
