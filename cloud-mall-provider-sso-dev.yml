@@ -36,7 +36,7 @@ security:
       id: shopmall-resource-user
 
 
-shopmall:
+cloudmall:
   enableSqlLogInterceptor: false
   token:
     interceptor:
