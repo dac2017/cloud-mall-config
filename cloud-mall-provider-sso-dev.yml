@@ -28,8 +28,8 @@ mybatis:
 security:
   oauth2:
     client:
-      clientId: shopmall-client-user
-      clientSecret: shopmallClientSecret
+      clientId: cloud-mall-client-user
+      clientSecret: cloudmallClientSecret
       access-token-uri: http://127.0.0.1:8000/oauth/token
       user-authorization-uri: http://127.0.0.1:8000/oauth/authorize
     resource:
@@ -53,8 +53,8 @@ cloudmall:
     oauth2:
       tokenStore: jwt
       clients[0]:
-        clientId: shopmall-client-user
-        clientSecret: shopmallClientSecret
+        clientId: cloud-mall-client-user
+        clientSecret: cloudmallClientSecret
         accessTokenValidateSeconds: 600
         scope: "*"
 
