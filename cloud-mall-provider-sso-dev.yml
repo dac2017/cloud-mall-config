@@ -42,7 +42,7 @@ cloudmall:
     interceptor:
       enable: true
   oauth2:
-    jwtSigningKey: shopmall
+    jwtSigningKey: cloudmall
     client:
       id: ${security.oauth2.resource.id}
       accessTokenUrl: ${security.oauth2.client.access-token-uri}
