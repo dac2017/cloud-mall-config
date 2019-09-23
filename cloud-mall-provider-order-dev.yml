@@ -1,5 +1,5 @@
 server:
-  port: 8000
+  port: 8001
 
 spring:
   mvc:
@@ -34,27 +34,4 @@ security:
       user-authorization-uri: http://127.0.0.1:7979/auth/oauth/authorize
     resource:
       id: shopmall-resource-user
-
-
-cloudmall:
-  enableSqlLogInterceptor: false
-  token:
-    interceptor:
-      enable: true
-  oauth2:
-    jwtSigningKey: cloudmall
-    client:
-      id: ${security.oauth2.resource.id}
-      accessTokenUrl: ${security.oauth2.client.access-token-uri}
-      clientId: ${security.oauth2.client.clientId}
-      clientSecret: ${security.oauth2.client.clientSecret}
-      clientAuthenticationScheme: header
-  security:
-    oauth2:
-      tokenStore: jwt
-      clients[0]:
-        clientId: cloud-mall-client-user
-        clientSecret: cloudmallClientSecret
-        accessTokenValidateSeconds: 600
-        scope: "*"
 
