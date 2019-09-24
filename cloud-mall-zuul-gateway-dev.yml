@@ -10,7 +10,6 @@ spring:
 
 zuul:
   host:
-    max-total-connections: 500
     socket-timeout-millis: 60000
     connect-timeout-millis: 60000
   forceOriginalQueryStringEncoding: true
@@ -51,6 +50,7 @@ zuul:
         OkToRetryOnAllOperations: false
         ConnectTimeout: 10000
         ReadTimeout: 10000 
+
 #如果Zuul使用服务发现，则需要使用
 ribbon:
   ReadTimeout: 60000
