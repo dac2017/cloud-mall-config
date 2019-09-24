@@ -55,6 +55,6 @@ cloudmall:
       clients[0]:
         clientId: cloud-mall-client-user
         clientSecret: cloudmallClientSecret
-        accessTokenValidateSeconds: 600
+        accessTokenValidateSeconds: 60
         scope: "*"
 
