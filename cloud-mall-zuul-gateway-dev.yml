@@ -6,13 +6,9 @@ spring:
     encoding:
       charset: UTF-8
       force: true
-      enabled: true
-    multipart:
-      enabled: true
-      max-request-size: 50MB
-      max-file-size: 50MB
+      enabled: true 
 
-zuul: 
+zuul:
   host:
     max-total-connections: 500
     socket-timeout-millis: 60000
@@ -54,11 +50,7 @@ zuul:
         MaxAutoRetriesNextServer: 2
         OkToRetryOnAllOperations: false
         ConnectTimeout: 10000
-        ReadTimeout: 10000
-
-
-
-    connect-timeout-millis: 60000
+        ReadTimeout: 10000 
 #如果Zuul使用服务发现，则需要使用
 ribbon:
   ReadTimeout: 60000
