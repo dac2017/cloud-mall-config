@@ -14,7 +14,7 @@ spring:
   redis:
     port: 6379
     host: localhost
-    password: yipeng2018 
+    password: yipeng2018
 
 
 
@@ -54,6 +54,11 @@ cloudmall:
       tokenStore: jwt
       clients[0]:
         clientId: cloud-mall-client-user
+        clientSecret: cloudmallClientSecret
+        accessTokenValidateSeconds: 60
+        scope: "*"
+      clients[1]:
+        clientId: cloud-mall-client-business
         clientSecret: cloudmallClientSecret
         accessTokenValidateSeconds: 60
         scope: "*"
