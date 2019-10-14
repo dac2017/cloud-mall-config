@@ -6,7 +6,7 @@ spring:
     encoding:
       charset: UTF-8
       force: true
-      enabled: true 
+      enabled: true
 
 zuul:
   host:
@@ -49,5 +49,19 @@ zuul:
         MaxAutoRetriesNextServer: 2
         OkToRetryOnAllOperations: false
         ConnectTimeout: 10000
-        ReadTimeout: 10000 
+        ReadTimeout: 10000
+    business-route:
+      path: /business/**
+      sensitiveHeaders:
+      service-id: cloud-mall-provider-business
+      ribbon:
+        eager-load:
+          enabled: true
+        MaxAutoRetries: 1
+        MaxAutoRetriesNextServer: 2
+        OkToRetryOnAllOperations: false
+        ConnectTimeout: 10000
+        ReadTimeout: 10000
+
+
 

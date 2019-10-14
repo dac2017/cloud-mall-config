@@ -1,0 +1,37 @@
+server:
+  port: 8003
+
+spring:
+  mvc:
+    date-format: yyyy-MM-dd HH:mm:ss
+  jackson:
+    joda-date-time-format: yyyy-MM-dd HH:mm:ss
+    date-format: yyyy-MM-dd HH:mm:ss
+  datasource:
+    url: jdbc:mysql://106.14.3.186:3306/expand_platform?characterEncoding=utf8&useSSL=false&serverTimezone=UTC
+    username: root
+    password: ypwl2016.z
+  redis:
+    port: 6379
+    host: localhost
+    password: yipeng2018 
+
+
+
+mybatis:
+  mapper-locations: classpath:mybatis/mapping/*.xml
+  type-aliases-package: com.com.cloudmall.common.base.mybatis.domain
+  configuration:
+    map-underscore-to-camel-case: true
+
+
+security:
+  oauth2:
+    client:
+      clientId: cloud-mall-client-business
+      clientSecret: cloudmallClientSecret
+      access-token-uri: http://127.0.0.1:7979/auth/oauth/token
+      user-authorization-uri: http://127.0.0.1:7979/auth/oauth/authorize
+    resource:
+      user-info-uri: http://127.0.0.1:7979/auth/user 
+      prefer-token-info: false 
